@@ -1,4 +1,16 @@
 h1 {
     font-size: 8em;
-    color: blue;
+    
+    -webkit-animation: temp 5s infinite
+}
+
+@-webkit-keyframes temp {
+    0%{color: red}
+    14%{color: orange}
+    28%{color: yellow}
+    42%{color: green}
+    56%{color: blue}
+    70%{color: indigo}
+    84%{color: violet}
+    100%{color: red}
 }
