@@ -1,0 +1,12 @@
+#cv_transcript {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* This looks weird both with and without alignment to me */
+/* But I can't explain why ... */
+
+/* h1 { */
+/*   text-align: center; */
+/* } */

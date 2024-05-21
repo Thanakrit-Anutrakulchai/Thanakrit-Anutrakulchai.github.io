@@ -1,0 +1,39 @@
+body {
+    background-color: #5e5d63;
+    font-size: 18px;
+    font-family: courier;
+    color: yellow;
+}
+
+h1 {
+    font-size: 30px;
+    /* font-family: ; */
+    color: white;
+}
+
+p {
+    font-size: 18px;
+    font-family: courier;
+    color: yellow;
+}
+
+.pic-para {
+    display: flex;
+    gap: 30px;
+}
+
+.skills {
+    text-align: left;
+}
+
+.md {
+    text-align: left;
+}
+
+a {
+    color: cyan;
+}
+
+a.internal {
+    color: orange;
+}

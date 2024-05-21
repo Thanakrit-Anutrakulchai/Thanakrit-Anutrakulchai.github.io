@@ -1,0 +1,62 @@
+body {
+    background-color: #5e5d63;
+    font-size: 18px;
+    font-family: courier;
+    color: yellow;
+}
+
+h1 {
+    font-size: 30px;
+    /* font-family: ; */
+    color: white;
+}
+
+p {
+    font-size: 18px;
+    font-family: courier;
+    color: yellow;
+}
+
+.tabs {
+    background-color: white;
+    width: 80px;
+    border: 2px solid black;
+    padding: 1px;
+    margin: 1px;
+
+    color: red;
+    text-align: center;
+
+    flex: 1;
+    /* display: inline; */
+}
+
+.tabs:hover{
+    color: black;
+    justify-content: center;
+}
+
+/* messing with some different layouts */
+.tabstrip {
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+
+    /* column-gap: 10px; */
+    /* row-gap: 10px; */
+    gap: 20px;
+    /* align-items: stretch; */
+
+    /* display: grid; */
+    /* grid-template-columns: 20% 20% 20%; */
+    /* grid-template-areas: ; */
+    /* justify-content: space-evenly; */
+    /* justify-self: end; */
+    /* align-self: center; */
+    /* place-items: center; */
+}
+
+.pic-para {
+    display: flex;
+    gap: 30px;
+}
