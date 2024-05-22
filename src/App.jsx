@@ -14,7 +14,13 @@ function App() {
             <h1><q>Who <i>is</i> Thanakrit Anutrakulchai?</q></h1>
             <hr />
             <div className="pic-para">
-                <img src={hyped_screenshot} width={400} />
+                <img  src={hyped_screenshot}
+                style={
+                    float: left;
+                    height: 100%;
+                    margin-right: 30px;
+                }
+                />
                 <div>
                     <p align="left">
                         I was born in Khon Kaen, Thailand. As per Thai tradition, my mother

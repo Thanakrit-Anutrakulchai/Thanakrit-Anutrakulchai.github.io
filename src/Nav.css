@@ -1,6 +1,6 @@
 .tabs {
     background-color: white;
-    width: 80px;
+    min-width: 150px;
     border: 2px solid black;
     padding: 1px;
     margin: 1px;
@@ -25,7 +25,9 @@
 
     /* column-gap: 10px; */
     /* row-gap: 10px; */
-    gap: 20px;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: row;
     /* align-items: stretch; */
 
     /* display: grid; */
