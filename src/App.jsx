@@ -57,33 +57,16 @@ function App() {
                     </p>
                 </div>
             </div>
-            {/*
-            TODO: decide on what _todo_ about these WIP(?) sections
-            <div className="skills">
-                <h2>Skills</h2>
-                <ul>
-                    <li>Haskell</li>
-                    <li>Java</li>
-                    <li>Python</li>
-                </ul>
-            </div>
-            */}
-            {/* 
-                <h2> Decomposing AI use in Code </h2>
-                <ol>
-                    <li>Search and Filter</li>
-                    <li>Code Generation</li>
-                </ol>
-                <h2>Weaknesses</h2>
-                <p>Some of my weaknesses are...</p>
-            */}
             <hr />
-            <a href="https://github.com/Thanakrit-Anutrakulchai">
-                <img src={github_logo} width={30} />
-            </a>
-            <a href="https://github.com/Thanakrit-Anutrakulchai">
-                Github
-            </a>
+            <div>
+                <a href="https://github.com/Thanakrit-Anutrakulchai">
+                    <img src={github_logo} width={30} />
+                </a>
+                <a href="https://github.com/Thanakrit-Anutrakulchai">
+                    Github
+                </a>
+            </div>
+            <p className="email">email: tanutrakulchai AT gmail DOT com</p>
         </>
     )
 }
