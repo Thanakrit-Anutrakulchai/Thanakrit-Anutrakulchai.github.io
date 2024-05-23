@@ -11,22 +11,16 @@ const CATEGORY_THEORY_WIKI_LINK = 'https://en.wikipedia.org/wiki/Category_theory
 function App() {
     return (
         <>
-            <h1><q>Who <i>is</i> Thanakrit Anutrakulchai?</q></h1>
+            <h1>Who <i>is</i> Thanakrit Anutrakulchai?</h1>
             <hr />
             <div className="pic-para">
-                <img  src={hyped_screenshot}
-                style={
-                    float: left;
-                    height: 100%;
-                    margin-right: 30px;
-                }
-                />
+                <img className="hyped" src={hyped_screenshot} />
                 <div>
                     <p align="left">
                         I was born in Khon Kaen, Thailand. As per Thai tradition, my mother
                         gave me a nickname of 'New', standing for the 'new millenium,' since
-                        I was born in the year 2000. That is the name I prefer to be called by in 
-                        English; if we work together, please refer to me as 'New', and don't worry 
+                        I was born in the year 2000. That is the name I prefer to be called by;
+                        if we work together, please refer to me as 'New', and don't worry 
                         about pronouncing my first name!
                     </p>
                     <p align="left">
