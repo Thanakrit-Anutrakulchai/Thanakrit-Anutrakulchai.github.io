@@ -4,3 +4,14 @@
   padding: 2rem;
   text-align: center;
 }
+
+h2.md {
+    display: flex;
+    align-items: center;
+}
+
+img.github-proj {
+    display: flex;
+    width: 25px;
+    margin-left: 10px;
+}

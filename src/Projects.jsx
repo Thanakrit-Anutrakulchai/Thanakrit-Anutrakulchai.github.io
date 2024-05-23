@@ -1,3 +1,4 @@
+import github_logo_white from './assets/img/github-mark/github-mark-white.png' 
 import github_logo from './assets/img/github-mark/github-mark.png' 
 import Markdown from 'react-markdown'
 import projectsMD from './assets/md/projects.md?raw'
@@ -34,7 +35,7 @@ function delegateMedia(props) {
         </div>
     } else if (rest.alt === 'github') {
         return <a href={GITHUB_LINK + rest.src}>
-            <img src={github_logo} width={25} />
+            <img src={github_logo_white} className="github-proj" />
         </a>
     } else if (rest.alt === 'bdays') {
         return <div align='center'>
@@ -68,12 +69,26 @@ function delegateMedia(props) {
     }
 }
 
+function formatHeaders(props) {
+    const {node, ...rest} = props
+    return <h2 className="md">{rest.children}</h2>
+}
+
+// for some reason, newline-separated elements become wrapped around <p> tags
+// this ensures they are not, but also eliminates <p> tags in general
+function unwrapSingleton(props) {
+    const {node, ...rest} = props
+    return <>{rest.children}</>
+}
+
 function Projects() {
     return (
         <>
             <h1>Brief descriptions of some of my projects.</h1>
             <hr />
-            <Markdown className="md" components={{img: delegateMedia}}>
+            <Markdown 
+                className="md" 
+                components={{p: unwrapSingleton, h2: formatHeaders, img: delegateMedia}}>
                 {projectsMD}
             </Markdown>
             <hr />
