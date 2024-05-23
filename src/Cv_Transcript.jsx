@@ -4,7 +4,7 @@ function Cv_Transcript() {
     return (
         <>
             <h1>CV</h1>
-            <p>Here is my <a href='/CV.html' className='internal'>CV</a> as a PDF.</p>
+            <p>Here is my <a href='/CV.pdf' className='internal'>CV</a> as a PDF.</p>
             <p>
                 Also, here is the raw text in 
                 my <a href='/CVRAW.html' className='internal'>
