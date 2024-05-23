@@ -18,8 +18,7 @@ p {
 }
 
 .pic-para {
-    display: flex;
-    gap: 30px;
+    /*unused*/
 }
 
 .skills {
