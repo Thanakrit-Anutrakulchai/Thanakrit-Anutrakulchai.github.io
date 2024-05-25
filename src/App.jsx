@@ -2,7 +2,7 @@ import hyped_screenshot from './assets/img/HYP_screenshot.png'
 import github_logo from './assets/img/github-mark/github-mark.png' 
 import './App.css'
 
-import DeterBot from './DeterBot.jsx'
+import DeterBot from './components/DeterBot.jsx'
 
 const EMILIE_WAPNICK_LINK = 
     'https://www.ted.com/talks/emilie_wapnick_why_some_of_us_don_t_have_one_true_calling?language=en'

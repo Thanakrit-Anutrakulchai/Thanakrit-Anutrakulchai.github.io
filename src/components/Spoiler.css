@@ -1,0 +1,11 @@
+em.hidden {
+    background-color: black;
+    color: black;
+    text-decoration: none;
+}
+
+em.revealed {
+    background-color: #5e5d63;
+    color: yellow;
+    text-decoration: none;
+}

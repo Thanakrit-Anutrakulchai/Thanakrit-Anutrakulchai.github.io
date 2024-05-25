@@ -13,12 +13,25 @@
 
 ## Wordpress Form Response Tool
 * I made a simple tool for checking if our (WIP) wordpress site received similar form responses.
+* It reads exported form responses from the Wordpress site as CSV files, then lists pairs of form 
+  responses that differ from each other by up to only three fields.
 
 ![formscan]()
 
 ## Game-24 Solutions ![github](Game24-Solutions)
 * I generated all possible quads where [Game-24](https://en.wikipedia.org/wiki/24_(puzzle)) 
   is solvable.
+* In the version of the game I worked with, the players are given four digits (0-9), and must find an
+  expression involving the digits and only operations of +, -, *, / which evaluates to 24.
+* I wrote a [Haskell](https://www.haskell.org/) program that enumerates all the
+  quads of digits with which winning is possible.
+* It found some surprising winnable quads.
+  You can try your luck at cracking them if you want a challenge :).
+  * 3, 3, 3, 5 | A solution: ![spoiler: (3 * 3) + (3 * 5)]()
+  * 6, 8, 9, 9 | A solution: ![spoiler: (9 / (9 - 6)) * 8]()
+  * 4, 4, 7, 7 | A solution: ![spoiler: (4 - (4 / 7)) * 7]()
+  * 6, 8, 8, 9 | A solution: ![spoiler: (8 * 9) - (8 * 6)]()
+  * 1, 5, 5, 5 | A solution: ![spoiler: (5 - (1 / 5)) * 5]()
 
 ## Sierpinski
 * I submitted an animation of a 
@@ -32,8 +45,28 @@
   ![sierpinski-vids]()
 
 ## TPatterns-lua ![github](TPatterns-lua)
-* A small Lua library for pattern matching on Lua tables
+* A small [Lua](https://www.lua.org/) library for pattern matching on Lua tables
 * This Lua module is on [LuaRocks](https://luarocks.org/modules/Thanakrit-Anutrakulchai/tpatterns)!
+* Here is a short example from the Github page:
+```lua
+    -- The matchers can be used as switch statements e.g.
+    match (value) {
+        case(5) - ... ,
+        case('hello') - ...
+    }
+
+    -- But their strength is in using the binded variables. e.g.
+    local append;
+    append = match_all_nomt { 
+        case( empty_list, var'ys' ) - 'ys',
+        case({head = var'x', tail = var'xs'}, var'ys') - 
+            function(t) return cons(t.x, append(t.xs, t.ys)) end 
+    }
+
+    --  defines a function `append` that takes two lists of the form { head = value, tail = restOfList } 
+    --    or {} (for the empty list), and concatenates them together.
+
+```
 
 ## Scaly Sewer Adventures
 * A short game made in GameMaker Lite v8 for Mount Boucherie Secondary's 
@@ -48,3 +81,6 @@
 
 ## This Website ![github](Thanakrit-Anutrakulchai.github.io)
 * You're looking at it.
+* Currently, it is hosted on Github Pages and built using Vite and React.
+* Some pages are written using markdown with the 
+  [react-markdown](https://github.com/remarkjs/react-markdown) plugin.

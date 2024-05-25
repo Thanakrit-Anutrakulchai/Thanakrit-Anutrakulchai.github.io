@@ -1,8 +1,12 @@
+import hljs from 'highlight.js/lib/core'
+
 import github_logo_white from './assets/img/github-mark/github-mark-white.png' 
 import github_logo from './assets/img/github-mark/github-mark.png' 
 import Markdown from 'react-markdown'
 import projectsMD from './assets/md/projects.md?raw'
 import './Projects.css'
+
+import Spoiler from './components/Spoiler.jsx'
 
 // Video imports for happy-birthday gifts
 // NOTE: I compressed the original stars.mp4 using veed.io
@@ -64,6 +68,8 @@ function delegateMedia(props) {
                 <source src={boardgame} type='video/mp4'></source>
             </video>
         </div>
+    } else if (typeof(rest.alt) === 'string' && rest.alt.substring(0, 8) === 'spoiler:') {
+        return <Spoiler text={rest.alt.substring(8).trim()}/>
     } else {
         return <img src={rest.src}></img>
     }

@@ -15,3 +15,35 @@ img.github-proj {
     width: 25px;
     margin-left: 10px;
 }
+
+pre {
+    background-color: black;
+    color: white;
+}
+
+/* syntax highlighting */
+.hljs {
+    background-color: #161b32;
+    color: white;
+}
+.hljs-comment {
+    color: grey;
+}
+.hljs-built_in {
+    color: white;
+}
+.hljs-number {
+    color: lightgreen;
+}
+.hljs-string {
+    color: yellow;
+}
+.hljs-keyword {
+    color: pink;
+}
+.hljs-function {
+    color: lightgreen;
+}
+.hljs-params {
+    color: white;
+}
