@@ -27,13 +27,13 @@ const GITHUB_LINK = "https://github.com/Thanakrit-Anutrakulchai/"
 function delegateMedia(props) {
     const {node, ...rest} = props
     if (rest.alt === 'sierpinski') {
-        return <div align="center"><img width="400px" src={sierpinski}></img></div>
+        return <div align="center"><img className="small" src={sierpinski}></img></div>
     } else if (rest.alt === 'sierpinski-vids') {
         return  <div align="center">
-            <video controls width="400px">
+            <video controls className="small">
                 <source src={sierpinski_concave} type='video/mp4'></source>
             </video>
-            <video controls width="400px">
+            <video controls className="small">
                 <source src={sierpinski_convex} type='video/mp4'></source>
             </video>
         </div>
@@ -43,28 +43,28 @@ function delegateMedia(props) {
         </a>
     } else if (rest.alt === 'bdays') {
         return <div align='center'>
-            <video controls width="400px">
+            <video controls className="small">
                 <source src={cake} type='video/mp4'></source>
             </video>
-            <video controls width="400px">
+            <video controls className="small">
                 <source src={stars} type='video/mp4'></source>
             </video>
         </div>
     } else if (rest.alt === 'formscan') {
         return <div align='center'>
-            <video controls width="800px">
+            <video controls className="large">
                 <source src={formscan} type='video/mp4'></source>
             </video>
         </div>
     } else if (rest.alt === 'sewers') {
         return <div align='center'>
-            <video controls width="800px">
+            <video controls className="large">
                 <source src={sewers} type='video/mp4'></source>
             </video>
         </div>
     } else if (rest.alt === 'boardgame') {
         return <div align='center'>
-            <video controls width="800px">
+            <video controls className="large">
                 <source src={boardgame} type='video/mp4'></source>
             </video>
         </div>

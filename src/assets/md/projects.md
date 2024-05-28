@@ -63,8 +63,10 @@
             function(t) return cons(t.x, append(t.xs, t.ys)) end 
     }
 
-    --  defines a function `append` that takes two lists of the form { head = value, tail = restOfList } 
-    --    or {} (for the empty list), and concatenates them together.
+    --  defines a function `append` that takes two lists of the form 
+    --    { head = value, tail = restOfList },
+    --    or {} (for the empty list), 
+    --  and concatenates them together.
 
 ```
 
