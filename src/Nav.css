@@ -22,11 +22,10 @@
     background-color: black;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 
     /* row-gap: 10px; */
     column-gap: 20px;
-    flex-wrap: wrap;
-    flex-direction: row;
     /* align-items: stretch; */
 
     /* display: grid; */
@@ -36,4 +35,18 @@
     /* justify-self: end; */
     /* align-self: center; */
     /* place-items: center; */
+}
+
+@media (min-width: 500px) {
+    .tabstrip {
+        flex-direction: row;
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .tabstrip {
+        flex-direction: column;
+        width: 100%;
+    }
 }
