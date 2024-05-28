@@ -1,15 +1,16 @@
 import React, {createRef, Component} from 'react';
 
-// using random html comments to deter bots
+// using empty tags and comments to deter bots
 // code based off of this stackoverflow: https://stackoverflow.com/a/41131326
 // modified due to deprecation: https://react.dev/reference/react-dom/findDOMNode#alternatives
+// further modified due to issues with setting the outerHTML on non-firefox browsers
 const DETER_BOT_COMMENT = "comment to deter bots"
 class DeterBot extends Component {
     inputRef = createRef(null);
 
     componentDidMount() {
         let el = this.inputRef.current;
-        el.outerHTML = this.createComment();
+        el.innerHTML = this.createComment();
     }
 
     createComment() {
