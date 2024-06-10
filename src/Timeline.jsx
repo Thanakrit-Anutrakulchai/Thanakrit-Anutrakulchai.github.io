@@ -5,8 +5,6 @@ import './Timeline.css'
 function Timeline() {
     return (
         <>
-            <h1>How did I spend my time?</h1>
-            <hr />
             {/*
             *  TODO: check whether the dates are correct.
             */}
@@ -18,4 +16,4 @@ function Timeline() {
 }
 
 export default Timeline
-
+export const HEADER = <h1>How did I spend my time?</h1>

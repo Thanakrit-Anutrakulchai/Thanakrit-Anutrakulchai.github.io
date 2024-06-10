@@ -1,7 +1,4 @@
-import hljs from 'highlight.js/lib/core'
-
 import github_logo_white from './assets/img/github-mark/github-mark-white.png' 
-import github_logo from './assets/img/github-mark/github-mark.png' 
 import Markdown from 'react-markdown'
 import projectsMD from './assets/md/projects.md?raw'
 import './Projects.css'
@@ -90,23 +87,15 @@ function unwrapSingleton(props) {
 function Projects() {
     return (
         <>
-            <h1>Brief descriptions of some of my projects.</h1>
-            <hr />
             <Markdown 
                 className="md" 
                 components={{p: unwrapSingleton, h2: formatHeaders, img: delegateMedia}}>
                 {projectsMD}
             </Markdown>
-            <hr />
-            <h1>You can find some of these projects on GitHub.</h1>
-            <a href={GITHUB_LINK}>
-                <img src={github_logo} width={30} />
-            </a>
-            <a href={GITHUB_LINK}>
-                Github
-            </a>
         </>
     )
 }
 
 export default Projects
+export const HEADER = <h1>Brief descriptions of some of my projects.</h1>
+export const FOOTER = <h1>You can find some of these projects on GitHub.</h1>
