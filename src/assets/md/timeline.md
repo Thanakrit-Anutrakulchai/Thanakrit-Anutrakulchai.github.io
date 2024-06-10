@@ -1,7 +1,12 @@
-## 2023, June Onwards
-* Currently taking a gap year!
-    - Spending time with family.
-    - Optimizing my workflow.
+## 2024, June Onwards
+* Job Searching
+    - I am looking for a job, preferably in Canada or the UK.
+    - Please contact me if you think we can work together!
+
+## 2023, June - 2024, June
+* Took a gap year!
+    - Spent time with family.
+    - Optimized my workflow.
 
 ## 2019, Sept. - 2023, May
 * Completed a Computer Science and Mathematics BSc Hons. degree at the University of Edinburgh, UK.
