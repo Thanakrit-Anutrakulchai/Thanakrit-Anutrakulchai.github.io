@@ -1,4 +1,4 @@
-import { ClassAttributes, HTMLAttributes, ImgHTMLAttributes } from 'react'
+import { JSX } from 'react'
 import github_logo_white from './assets/img/github-mark/github-mark-white.png' 
 import Markdown, { ExtraProps } from 'react-markdown'
 import projectsMD from './assets/md/projects.md?raw'
@@ -22,7 +22,10 @@ import boardgame from './assets/video/boardgame.mp4'
 
 const GITHUB_LINK = "https://github.com/Thanakrit-Anutrakulchai/"
 
-function delegateMedia(props : ClassAttributes<HTMLImageElement> & ImgHTMLAttributes<HTMLImageElement> & ExtraProps) {
+type PropOf<TagName extends keyof JSX.IntrinsicElements> = JSX.IntrinsicElements[TagName]
+                                                         & ExtraProps
+
+function delegateMedia(props : PropOf<"img">) {
     const {node, ...rest} = props
     if (rest.alt === 'sierpinski') {
         return <div className="media"><img className="small" src={sierpinski}></img></div>
@@ -73,14 +76,14 @@ function delegateMedia(props : ClassAttributes<HTMLImageElement> & ImgHTMLAttrib
     }
 }
 
-function formatHeaders(props : ClassAttributes<HTMLHeadingElement> & HTMLAttributes<HTMLHeadingElement> & ExtraProps) : JSX.Element {
+function formatHeaders(props : PropOf<"h2">) : JSX.Element {
     const {node, ...rest} = props
     return <h2 className="md">{rest.children}</h2>
 }
 
 // for some reason, newline-separated elements become wrapped around <p> tags
 // this ensures they are not, but also eliminates <p> tags in general
-function unwrapSingleton(props : ClassAttributes<HTMLParagraphElement> & HTMLAttributes<HTMLParagraphElement> & ExtraProps) : JSX.Element {
+function unwrapSingleton(props : PropOf<"p">) : JSX.Element {
     const {node, ...rest} = props
     return <>{rest.children}</>
 }
