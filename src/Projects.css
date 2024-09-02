@@ -21,6 +21,11 @@ pre {
     color: white;
 }
 
+div.media {
+    display: flex;
+    justify-content: center;
+}
+
 @media (min-width: 500px) {
     .small {
         width: 400px;

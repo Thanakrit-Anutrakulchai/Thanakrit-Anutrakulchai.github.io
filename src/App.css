@@ -21,6 +21,10 @@
     }
 }
 
+p.right-of-img {
+    text-align: left;
+}
+
 p.email {
     text-align: center;
 }
