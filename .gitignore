@@ -8,7 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-# dist # temporarily pushing this while I figure out how to get github actions working
+dist
 dist-ssr
 *.local
 
