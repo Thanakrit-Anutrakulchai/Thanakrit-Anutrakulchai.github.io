@@ -1,14 +1,15 @@
+import { Link } from 'react-router-dom'
 import './Nav.css'
 
 function Nav() {
     return (
         <>
             <nav className="tabstrip">
-                <a className="tabs" href="index.html">Home</a>
-                <a className="tabs" href="cv_transcript.html">CV&Transcript</a>
-                <a className="tabs" href="projects.html">Projects</a>
-                <a className="tabs" href="timeline.html">Timeline</a>
-                <a className="tabs" href="blog.html">Blog</a>
+                <Link className="tabs" to="/">Home</Link>
+                <Link className="tabs" to="/cv_transcript">CV&Transcript</Link>
+                <Link className="tabs" to="/projects">Projects</Link>
+                <Link className="tabs" to="/timeline">Timeline</Link>
+                <Link className="tabs" to="/blog">Blog</Link>
             </nav>
         </>
     )

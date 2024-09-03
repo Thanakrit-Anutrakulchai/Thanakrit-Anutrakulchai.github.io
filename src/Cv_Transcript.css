@@ -7,6 +7,6 @@
 /* This looks weird both with and without alignment to me */
 /* But I can't explain why ... */
 
-/* h1 { */
-/*   text-align: center; */
+/* .cv-page-text { */
+/*   text-align: left; */
 /* } */

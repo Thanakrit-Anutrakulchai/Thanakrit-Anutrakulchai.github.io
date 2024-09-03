@@ -1,4 +1,4 @@
-import { JSX } from 'react'
+import { JSX, useEffect } from 'react'
 import github_logo_white from './assets/img/github-mark/github-mark-white.png' 
 import Markdown, { ExtraProps } from 'react-markdown'
 import projectsMD from './assets/md/projects.md?raw'
@@ -88,7 +88,10 @@ function unwrapSingleton(props : PropOf<"p">) : JSX.Element {
     return <>{rest.children}</>
 }
 
+const title = "Projects - New's"
 function Projects() {
+    useEffect(() => { document.title = title })
+
     return (
         <>
             <Markdown 

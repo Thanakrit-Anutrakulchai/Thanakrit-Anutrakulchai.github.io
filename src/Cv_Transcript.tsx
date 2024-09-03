@@ -1,6 +1,10 @@
+import { useEffect } from 'react'
 import './Cv_Transcript.css'
 
+const title = "CV - New's"
 function Cv_Transcript() {
+    useEffect(() => { document.title = title })
+
     return (
         <>
             <h1>CV</h1>
@@ -25,4 +29,3 @@ function Cv_Transcript() {
 }
 
 export default Cv_Transcript
-

@@ -1,6 +1,10 @@
+import { useEffect } from 'react'
 import './Blog.css'
 
+const title = "Blog - New's"
 function Blog() {
+    useEffect(() => { document.title = title })
+
     return (
         <>
             <p>There's nothing here yet! ...That is probably a good sign. Don't expect it to last.</p>

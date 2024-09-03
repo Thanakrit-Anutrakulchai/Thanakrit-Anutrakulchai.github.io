@@ -1,8 +1,12 @@
+import { useEffect } from 'react'
 import Markdown from 'react-markdown'
 import timelineMD from './assets/md/timeline.md?raw'
 import './Timeline.css'
 
+const title = "Timeline - New's"
 function Timeline() {
+    useEffect(() => { document.title = title })
+
     return (
         <>
             {/*

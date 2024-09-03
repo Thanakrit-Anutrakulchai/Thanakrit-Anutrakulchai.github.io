@@ -1,5 +1,6 @@
+import { useEffect } from 'react'
 import hyped_screenshot from './assets/img/HYP_screenshot.png'
-import './App.css'
+import './Home.css'
 
 const EMILIE_WAPNICK_LINK = 
     'https://www.ted.com/talks/emilie_wapnick_why_some_of_us_don_t_have_one_true_calling?language=en'
@@ -8,7 +9,10 @@ const GALOIS_THEORY_WIKI_LINK = 'https://en.wikipedia.org/wiki/galois_theory'
 const CATEGORY_THEORY_WIKI_LINK = 'https://en.wikipedia.org/wiki/Category_theory'
 
 
-function App() {
+const title = "Homepage - New's"
+function Home() {
+    useEffect(() => { document.title = title })
+
     return (
         <>
             <div className="pic-para">
@@ -59,6 +63,5 @@ function App() {
     )
 }
 
-export default App
+export default Home
 export const HEADER = <h1>Who <i>is</i> Thanakrit Anutrakulchai?</h1>
-
