@@ -21,17 +21,19 @@ type PageInfo = {
     footer? : JSX.Element,
 }
 
+let idCount = 0
+const uuid = () => idCount++
 const pages : PageInfo[] = [
-    { id: 0,  divId: "home", link: "/", content: <Home />, header: HomeHeader },
-    { id: 1,  divId: "projects", link: "/projects", content: <Projects />, header: ProjectsHeader, footer: ProjectsFooter },
-    { id: 2,  divId: "timeline", link: "/timeline", content: <Timeline />, header: TimelineHeader },
-    { id: 3,  divId: "blog", link: "/blog", content: <Blog />, header: BlogHeader },
-    { id: 4,  divId: "cv_transcript", link: "/cv_transcript", content: <Cv_Transcript /> },
-    { id: 99, divId: "pagenotfound", link: "/:notfound", content: <PageNotFound />, header: PageNotFoundHeader },
+    { id: uuid(), divId: "home", link: "/", content: <Home />, header: HomeHeader },
+    { id: uuid(), divId: "projects", link: "/projects", content: <Projects />, header: ProjectsHeader, footer: ProjectsFooter },
+    { id: uuid(), divId: "timeline", link: "/timeline", content: <Timeline />, header: TimelineHeader },
+    { id: uuid(), divId: "blog", link: "/blog", content: <Blog />, header: BlogHeader },
+    { id: uuid(), divId: "cv_transcript", link: "/cv_transcript", content: <Cv_Transcript /> },
+    { id: uuid(), divId: "pagenotfound", link: "/:notfound", content: <PageNotFound />, header: PageNotFoundHeader },
 ]
 
 function route(p : PageInfo) : JSX.Element {
-    return <Route path={p.link} element={
+    return <Route key={p.id} path={p.link} element={
         <div id={p.divId}>
             <Header content={p.header} />
             {p.content}
@@ -42,7 +44,7 @@ function route(p : PageInfo) : JSX.Element {
 
 // Append ".html" to page link. For legacy links, may remove later
 function dotHtml(p : PageInfo) : PageInfo {
-    return { ...p, link: p.link + ".html" }
+    return { ...p, id: uuid(), link: p.link + ".html" }
 }
 
 const pageRoutes = pages.map(route)
