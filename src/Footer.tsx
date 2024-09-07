@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import { Language, LangCxt } from './env.tsx'
 import './Footer.css'
 
 import github_logo from './assets/img/github-mark/github-mark.png' 
@@ -18,7 +20,9 @@ const EML_CN_1 = "em"
 const EML_CN_2 = "ail"
 const EML_CN = EML_CN_1 + EML_CN_2
 
-function Footer(props : { content : JSX.Element | undefined }) {
+function Footer(props : { content? : JSX.Element }) {
+    const lang = useContext(LangCxt)
+
     return (
         <>
             <hr />
@@ -31,9 +35,20 @@ function Footer(props : { content : JSX.Element | undefined }) {
                     Github
                 </a>
             </div>
-            <p className={EML_CN}>ema<DeterBot />il: <a href={EML_LINK}>tanutra<DeterBot />kulchai@gm<DeterBot />ail.co<DeterBot />m</a></p>
+            {eml[lang]}
         </>
     )
+}
+
+const eml : Record<Language, JSX.Element> = {
+    en: <p className={EML_CN}>
+            ema<DeterBot />il: <a href={EML_LINK}>tanutra<DeterBot />
+            kulchai@gm<DeterBot />ail.co<DeterBot />m</a>
+        </p>,
+    thai: <p className={EML_CN}>
+            อี<DeterBot />เมล: <a href={EML_LINK}>tanutra<DeterBot />
+            kulchai@gm<DeterBot />ail.co<DeterBot />m</a>
+        </p>,
 }
 
 export default Footer

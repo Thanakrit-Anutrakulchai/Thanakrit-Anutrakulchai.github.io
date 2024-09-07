@@ -1,7 +1,12 @@
-import { JSX, useEffect } from 'react'
+import { JSX, useContext, useEffect } from 'react'
+
+import { Language, LangCxt } from './env.tsx'
+import Header from './Header.tsx'
+import Footer from './Footer.tsx'
 import github_logo_white from './assets/img/github-mark/github-mark-white.png' 
 import Markdown, { ExtraProps } from 'react-markdown'
 import projectsMD from './assets/md/projects.md?raw'
+import projectsMDTH from './assets/md/thai/projects.md?raw'
 import './Projects.css'
 
 import Spoiler from './components/Spoiler.js'
@@ -90,19 +95,34 @@ function unwrapSingleton(props : PropOf<"p">) : JSX.Element {
 
 const title = "Projects - New's"
 function Projects() {
+    const lang = useContext(LangCxt)
     useEffect(() => { document.title = title })
 
     return (
         <>
+            <Header content={headers[lang]} />
             <Markdown 
                 className="md" 
                 components={{p: unwrapSingleton, h2: formatHeaders, img: delegateMedia}}>
-                {projectsMD}
+                {contents[lang]}
             </Markdown>
+            <Footer content={footers[lang]}/>
         </>
     )
 }
 
+const headers : Record<Language, JSX.Element> = {
+    en: <h1>Brief descriptions of some of my projects.</h1>,
+    thai: <h1>TODO: TRANSLATE</h1>
+}
+const contents : Record<Language, string> = {
+    en: projectsMD,
+    thai: projectsMDTH
+}
+const footers : Record<Language, JSX.Element> = {
+    en:<h1>You can find some of these projects on GitHub.</h1>,
+    thai: <h1>TODO: TRANSLATE</h1>
+}
+
+
 export default Projects
-export const HEADER = <h1>Brief descriptions of some of my projects.</h1>
-export const FOOTER = <h1>You can find some of these projects on GitHub.</h1>

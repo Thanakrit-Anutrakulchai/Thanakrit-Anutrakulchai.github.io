@@ -1,11 +1,24 @@
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
+
+import { Language, LangCxt } from './env.tsx'
+import Header from './Header.tsx'
+import Footer from './Footer.tsx'
 import './Cv_Transcript.css'
 
 const title = "CV - New's"
 function Cv_Transcript() {
+    const lang = useContext(LangCxt)
     useEffect(() => { document.title = title })
 
-    return (
+    return <>
+        <Header />
+        {contents[lang]}
+        <Footer />
+    </>
+}
+
+const contents : Record<Language, JSX.Element> = {
+    en: 
         <>
             <h1>CV</h1>
             <p>Here is my <a href='/CV.pdf' className='internal'>CV</a> as a PDF.</p>
@@ -24,8 +37,11 @@ function Cv_Transcript() {
                     transcript
                 </a> from the University of Edinburgh.
             </p>
+        </>,
+    thai:
+        <>
+            <p>TODO: TRANSLATE TO THAI</p>
         </>
-    )
 }
 
 export default Cv_Transcript
