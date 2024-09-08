@@ -1,11 +1,10 @@
 .tabs {
-    background-color: white;
     min-width: 150px;
     border: 2px solid black;
+    border-radius: 33%;
     padding: 1px;
     margin: 1px;
 
-    color: #eb000c;
     text-align: center;
 
     flex: 1;
@@ -13,13 +12,11 @@
 }
 
 .tabs:hover{
-    color: black;
     justify-content: center;
 }
 
 /* messing with some different layouts */
 .tabstrip {
-    background-color: black;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;

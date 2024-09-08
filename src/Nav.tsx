@@ -33,7 +33,9 @@ function Nav() {
             <nav className="tabstrip">
             {
                 links[lang].map(info => 
-                    <Link key={info.id} className="tabs" to={info.link}>{info.displayName}</Link>
+                    <Link key={info.id} className="tabs internal" to={info.link}>
+                        {info.displayName}
+                    </Link>
                 )
             }
             </nav>

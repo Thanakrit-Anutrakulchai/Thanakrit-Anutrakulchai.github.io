@@ -1,5 +1,5 @@
 body {
-    background-color: #5e5d63;
+    background-color: #46464a; /* Courtesy of a friend of a friend's suggestion */
     font-size: 18px;
     font-family: courier;
     color: yellow;
@@ -35,5 +35,7 @@ a:hover {
 }
 
 a.internal {
-    color: orange;
+    /* some alternative colours listed here to try out */
+    /* color: orange; */
+    color: #f5b53a
 }
