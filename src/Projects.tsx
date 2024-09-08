@@ -1,6 +1,6 @@
 import { JSX, useContext, useEffect } from 'react'
 
-import { Language, LangCxt } from './env.tsx'
+import { Language, LangCxt, WindowCxt, WindowSize } from './env.tsx'
 import Header from './Header.tsx'
 import Footer from './Footer.tsx'
 import github_logo_white from './assets/img/github-mark/github-mark-white.png' 
@@ -31,7 +31,9 @@ type PropOf<TagName extends keyof JSX.IntrinsicElements> = JSX.IntrinsicElements
                                                          & ExtraProps
 
 function delegateMedia(props : PropOf<"img">) {
+    const winInfo = useContext(WindowCxt)
     const {node, ...rest} = props
+
     if (rest.alt === 'sierpinski') {
         return <div className="media"><img className="small" src={sierpinski}></img></div>
     } else if (rest.alt === 'sierpinski-vids') {
@@ -74,10 +76,40 @@ function delegateMedia(props : PropOf<"img">) {
                 <source src={boardgame} type='video/mp4'></source>
             </video>
         </div>
-    } else if (typeof(rest.alt) === 'string' && rest.alt.substring(0, 8) === 'spoiler:') {
-        return <Spoiler text={rest.alt.substring(8).trim()}/>
+    } else if (rest.alt === 'QuadsSols') {
+        if (winInfo.size < WindowSize.lg) {
+            return <ul>
+                    <li>3, 3, 3, 5 <p>A solution:</p><p><Spoiler text="(3 * 3) + (3 * 5)" /></p></li>
+                    <li>6, 8, 9, 9 <p>A solution:</p><p><Spoiler text="(9 / (9 - 6)) * 8" /></p></li>
+                    <li>4, 4, 7, 7 <p>A solution:</p><p><Spoiler text="(4 - (4 / 7)) * 7" /></p></li>
+                    <li>6, 8, 8, 9 <p>A solution:</p><p><Spoiler text="(8 * 9) - (8 * 6)" /></p></li>
+                    <li>1, 5, 5, 5 <p>A solution:</p><p><Spoiler text="(5 - (1 / 5)) * 5" /></p></li>
+            </ul>
+        } else {
+            return <ul>
+                    <li>3, 3, 3, 5 | A solution: <Spoiler text="(3 * 3) + (3 * 5)" /></li>
+                    <li>6, 8, 9, 9 | A solution: <Spoiler text="(9 / (9 - 6)) * 8" /></li>
+                    <li>4, 4, 7, 7 | A solution: <Spoiler text="(4 - (4 / 7)) * 7" /></li>
+                    <li>6, 8, 8, 9 | A solution: <Spoiler text="(8 * 9) - (8 * 6)" /></li>
+                    <li>1, 5, 5, 5 | A solution: <Spoiler text="(5 - (1 / 5)) * 5" /></li>
+            </ul>
+        }
     } else {
         return <img src={rest.src}></img>
+    }
+}
+
+// hide Lua code in md if screen size is too small
+function hideCode(props : PropOf<"code">) : JSX.Element {
+    const winInfo = useContext(WindowCxt)
+    const {node, ...rest} = props
+
+    if (winInfo.size < WindowSize.lg) {
+        return <></>
+    } else {
+        return <code>
+            {rest.children}
+        </code>
     }
 }
 
@@ -103,7 +135,12 @@ function Projects() {
             <Header content={headers[lang]} />
             <Markdown 
                 className="md" 
-                components={{p: unwrapSingleton, h2: formatHeaders, img: delegateMedia}}>
+                components={{
+                    p: unwrapSingleton, 
+                    h2: formatHeaders, 
+                    img: delegateMedia,
+                    code: hideCode
+                }}>
                 {contents[lang]}
             </Markdown>
             <Footer content={footers[lang]}/>

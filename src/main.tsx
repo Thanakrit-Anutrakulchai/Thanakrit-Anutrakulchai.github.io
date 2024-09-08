@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { JSX, StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 
-import { LangCxt } from './env.tsx'
+import { LangCxt, WithWindowSize } from './env.tsx'
 import './index.css'
 
 import {default as Home} from './Home.tsx'
@@ -66,11 +66,13 @@ function setupPage(id : string) {
     if (elem) {
         ReactDOM.createRoot(elem).render(
             <StrictMode>
-                <Router>
-                    <Routes>
-                        {pageRoutes}
-                    </Routes>
-                </Router>
+                <WithWindowSize>
+                    <Router>
+                        <Routes>
+                            {pageRoutes}
+                        </Routes>
+                    </Router>
+                </WithWindowSize>
             </StrictMode>,
         )
     }

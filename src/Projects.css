@@ -23,6 +23,7 @@ pre {
 
 div.media {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -34,7 +35,7 @@ div.media {
 
 @media (max-width: 500px) {
     .small {
-        width: 100%;
+        width: 90%;
     }
 }
 
@@ -46,7 +47,7 @@ div.media {
 
 @media (max-width: 900px) {
     .large {
-        width: 100%;
+        width: 88%;
     }
 }
 

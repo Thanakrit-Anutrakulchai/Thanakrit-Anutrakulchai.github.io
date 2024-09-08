@@ -29,11 +29,7 @@
   quads of digits with which winning is possible.
 * It found some surprising winnable quads.
   You can try your luck at cracking them if you want a challenge :).
-  * 3, 3, 3, 5 | A solution: ![spoiler: (3 * 3) + (3 * 5)]()
-  * 6, 8, 9, 9 | A solution: ![spoiler: (9 / (9 - 6)) * 8]()
-  * 4, 4, 7, 7 | A solution: ![spoiler: (4 - (4 / 7)) * 7]()
-  * 6, 8, 8, 9 | A solution: ![spoiler: (8 * 9) - (8 * 6)]()
-  * 1, 5, 5, 5 | A solution: ![spoiler: (5 - (1 / 5)) * 5]()
+  ![QuadsSols]()
 
 ## Sierpinski
 * I submitted an animation of a 
