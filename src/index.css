@@ -3,6 +3,7 @@ body {
     font-size: 18px;
     font-family: courier;
     color: yellow;
+    overflow-wrap: break-word;
 }
 
 h1 {

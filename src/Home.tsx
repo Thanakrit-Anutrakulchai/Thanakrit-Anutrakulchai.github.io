@@ -106,7 +106,7 @@ const contents : Record<Language, JSX.Element> = {
             ซึ่งรวมถึงการแยกโครงสร้างทางคณิตศาสตร์เป็นองค์ประกอบต่างๆ และระบบการแยกสิ่งเหล่านั้นเข้าสู่หมวดหมู่ต่างๆครับ
             วิชาที่ผมเรียนมา ที่เกี่ยวข้องกับเรื่องนี้ ได้แก่<a href={THAI_GROUP_THEORY_WIKI_LINK}>
                 ทฤษฎีกรุป
-            </a> และ<a href={THAI_GALOIS_THEORY_WIKI_LINK}>
+            </a> กับ<a href={THAI_GALOIS_THEORY_WIKI_LINK}>
                 ทฤษฎีกาลัว
             </a>ครับ
             หากอยากรู้ว่าผมเรียนอะไรอื่นบ้าง โปรดดู<a href='/transcript.htm' className='internal'>

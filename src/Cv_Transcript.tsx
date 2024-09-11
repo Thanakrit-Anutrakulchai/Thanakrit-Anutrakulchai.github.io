@@ -54,7 +54,7 @@ const contents : Record<Language, JSX.Element> = {
             {/* <p>The PDF was generated using</p> */}
             <h1>ใบแสดงผลการศึกษา (Transcript)</h1>
             <p>
-                สามารถหา <a href='/transcript.htm' className='internal'>
+                สามารถหา<a href='/transcript.htm' className='internal'>
                     ใบแสดงผลการศึกษา
                 </a> จากมหาวิทธยาลัยเอดินเบอระได้ที่นี่
             </p>
