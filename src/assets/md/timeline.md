@@ -17,11 +17,11 @@
 ## 2016 - 2018
 * Studied at Mount Boucherie Secondary School in Kelowna, BC, Canada.
 * Stayed with an amicable host family.
-* My interests in Maths was revived due to the presence of accessible education videos.
+* My interests in Maths was revived due to the presence of accessible education videos.  
   Some channels I watched were
   [3Blue1Brown](https://www.youtube.com/@3blue1brown),
   [BillShillito](https://www.youtube.com/@BillShillito/), and
-  [VSauce](https://www.youtube.com/@Vsauce)
+  [VSauce](https://www.youtube.com/@Vsauce).
 
 ## 2012 - 2016
 * Studied at Khon Kaen Wittayayon School in Khon Kaen, Thailand.

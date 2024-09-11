@@ -30,7 +30,7 @@ const GITHUB_LINK = "https://github.com/Thanakrit-Anutrakulchai/"
 type PropOf<TagName extends keyof JSX.IntrinsicElements> = JSX.IntrinsicElements[TagName]
                                                          & ExtraProps
 
-function delegateMedia(props : PropOf<"img">) {
+const delegateMedia = (lang : Language) => (props : PropOf<"img">) => {
     const winInfo = useContext(WindowCxt)
     const {node, ...rest} = props
 
@@ -77,21 +77,25 @@ function delegateMedia(props : PropOf<"img">) {
             </video>
         </div>
     } else if (rest.alt === 'QuadsSols') {
+        const sol : Record<Language, string> = {
+            en: "A solution:",
+            thai: "มีคำตอบ:"
+        }
         if (winInfo.size < WindowSize.lg) {
             return <ul>
-                    <li>3, 3, 3, 5 <p>A solution:</p><p><Spoiler text="(3 * 3) + (3 * 5)" /></p></li>
-                    <li>6, 8, 9, 9 <p>A solution:</p><p><Spoiler text="(9 / (9 - 6)) * 8" /></p></li>
-                    <li>4, 4, 7, 7 <p>A solution:</p><p><Spoiler text="(4 - (4 / 7)) * 7" /></p></li>
-                    <li>6, 8, 8, 9 <p>A solution:</p><p><Spoiler text="(8 * 9) - (8 * 6)" /></p></li>
-                    <li>1, 5, 5, 5 <p>A solution:</p><p><Spoiler text="(5 - (1 / 5)) * 5" /></p></li>
+                    <li>3, 3, 3, 5 <p>{sol[lang]}</p><p><Spoiler text="(3 * 3) + (3 * 5)" /></p></li>
+                    <li>6, 8, 9, 9 <p>{sol[lang]}</p><p><Spoiler text="(9 / (9 - 6)) * 8" /></p></li>
+                    <li>4, 4, 7, 7 <p>{sol[lang]}</p><p><Spoiler text="(4 - (4 / 7)) * 7" /></p></li>
+                    <li>6, 8, 8, 9 <p>{sol[lang]}</p><p><Spoiler text="(8 * 9) - (8 * 6)" /></p></li>
+                    <li>1, 5, 5, 5 <p>{sol[lang]}</p><p><Spoiler text="(5 - (1 / 5)) * 5" /></p></li>
             </ul>
         } else {
             return <ul>
-                    <li>3, 3, 3, 5 | A solution: <Spoiler text="(3 * 3) + (3 * 5)" /></li>
-                    <li>6, 8, 9, 9 | A solution: <Spoiler text="(9 / (9 - 6)) * 8" /></li>
-                    <li>4, 4, 7, 7 | A solution: <Spoiler text="(4 - (4 / 7)) * 7" /></li>
-                    <li>6, 8, 8, 9 | A solution: <Spoiler text="(8 * 9) - (8 * 6)" /></li>
-                    <li>1, 5, 5, 5 | A solution: <Spoiler text="(5 - (1 / 5)) * 5" /></li>
+                    <li>3, 3, 3, 5 | {sol[lang]} <Spoiler text="(3 * 3) + (3 * 5)" /></li>
+                    <li>6, 8, 9, 9 | {sol[lang]} <Spoiler text="(9 / (9 - 6)) * 8" /></li>
+                    <li>4, 4, 7, 7 | {sol[lang]} <Spoiler text="(4 - (4 / 7)) * 7" /></li>
+                    <li>6, 8, 8, 9 | {sol[lang]} <Spoiler text="(8 * 9) - (8 * 6)" /></li>
+                    <li>1, 5, 5, 5 | {sol[lang]} <Spoiler text="(5 - (1 / 5)) * 5" /></li>
             </ul>
         }
     } else {
@@ -125,10 +129,13 @@ function unwrapSingleton(props : PropOf<"p">) : JSX.Element {
     return <>{rest.children}</>
 }
 
-const title = "Projects - New's"
+const titles : Record<Language, string> = {
+    en: "Projects - New's",
+    thai: "ผลงาน - ธนกฤต"
+}
 function Projects() {
     const lang = useContext(LangCxt)
-    useEffect(() => { document.title = title })
+    useEffect(() => { document.title = titles[lang] })
 
     return (
         <>
@@ -138,7 +145,7 @@ function Projects() {
                 components={{
                     p: unwrapSingleton, 
                     h2: formatHeaders, 
-                    img: delegateMedia,
+                    img: delegateMedia(lang),
                     code: hideCode
                 }}>
                 {contents[lang]}
@@ -150,7 +157,7 @@ function Projects() {
 
 const headers : Record<Language, JSX.Element> = {
     en: <h1>Brief descriptions of some of my projects.</h1>,
-    thai: <h1>TODO: TRANSLATE</h1>
+    thai: <h1>ผลงานเก่าๆ พร้อมคำอธิบายสั้นๆ</h1>
 }
 const contents : Record<Language, string> = {
     en: projectsMD,
@@ -158,7 +165,7 @@ const contents : Record<Language, string> = {
 }
 const footers : Record<Language, JSX.Element> = {
     en:<h1>You can find some of these projects on GitHub.</h1>,
-    thai: <h1>TODO: TRANSLATE</h1>
+    thai: <h1>คุณสามารถหางานพวกนี้บางงานได้บน GitHub</h1>
 }
 
 

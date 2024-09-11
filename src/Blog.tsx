@@ -5,10 +5,13 @@ import Header from './Header.tsx'
 import Footer from './Footer.tsx'
 import './Blog.css'
 
-const title = "Blog - New's"
+const titles : Record<Language, string> = {
+    en: "Blog - New's",
+    thai: "บล็อก - ธนกฤต"
+}
 function Blog() {
     const lang = useContext(LangCxt)
-    useEffect(() => { document.title = title })
+    useEffect(() => { document.title = titles[lang] })
 
     return contents[lang]
 }
@@ -22,7 +25,7 @@ const contents : Record<Language, JSX.Element> = {
         <Footer />
     </>,
     thai: <>
-        <Header content=<h1>TODO: Translate to Thai</h1> />
+        <Header content=<h1>ตำแหน่งแห่งคำพูดมั่วๆซั่วๆของผม</h1> />
         <p>
             ตอนนี้ยังไม่มีอะไร ...ซึ่งถือว่าดี. อย่าหวังว่าจะเป็นเช่นนี้ไปตลอด.
         </p> 

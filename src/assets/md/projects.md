@@ -4,6 +4,7 @@
 * This was made in Unity.
 
 ![boardgame]()
+
 ## "Happy Birthday" Gifts
   * Sometimes, I code small gifts for my friends and family.
   * I made a little cake animation for my mom, and a small starry sky animation for my dad.
@@ -80,6 +81,6 @@
 
 ## This Website ![github](Thanakrit-Anutrakulchai.github.io)
 * You're looking at it.
-* Currently, it is hosted on Github Pages and built using Vite and React.
+* Currently, it is hosted on Github Pages and built using Vite, React, and TypeScript.
 * Some pages are written using markdown with the 
   [react-markdown](https://github.com/remarkjs/react-markdown) plugin.

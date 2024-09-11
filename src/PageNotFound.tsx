@@ -5,10 +5,13 @@ import Header from './Header.tsx'
 import Footer from './Footer.tsx'
 import './PageNotFound.css'
 
-const title = "Page Not Found - New's"
+const titles : Record<Language, string> = {
+    en: "Page Not Found - New's",
+    thai: "หาหน้าไม่เจอ - ธนกฤต"
+}
 function PageNotFound() {
     const lang = useContext(LangCxt)
-    useEffect(() => { document.title = title })
+    useEffect(() => { document.title = titles[lang] })
 
     return contents[lang]
 }
@@ -22,9 +25,9 @@ const contents : Record<Language, JSX.Element> = {
         <Footer />
     </>,
     thai: <>
-        <Header content=<h1>TODO: Translate</h1> />
+        <Header content=<h1>หาหน้านี้ไม่เจอ!</h1> />
         <p>
-            TODO: Translate to Thai
+            กรุณาใช้แถบนำทางเพื่อกลับไปหน้าอื่น
         </p>
         <Footer />
     </>

@@ -1,49 +1,45 @@
-## TODO: TRANSLATE THIS TO THAI
+## 2024, มิถุนายน
+* หางาน
+    - ยอมทำงานเมืองนอกด้วย
+    - กรุณาติดต่อมาหากมีงานให้
 
-## 2024, June Onwards
-* Job Searching
-    - I am looking for a job, preferably in Canada or the UK.
-    - Please contact me if you think we can work together!
+## 2023, มิถุนายน - 2024, มิถุนายน
+* พัก gap year!
+    - ใช้เวลากับครอบครัว
+    - พัฒนาการทำงานให้เร็วขึ้น และดีขึ้น
 
-## 2023, June - 2024, June
-* Took a gap year!
-    - Spent time with family.
-    - Optimized my workflow.
-
-## 2019, Sept. - 2023, May
-* Completed a Computer Science and Mathematics BSc Hons. degree at the University of Edinburgh, UK.
+## 2019, กันยายน - 2023, พฤษภาคม
+* เรียนจบปริญญาตรี (BSc. Honours) ด้านวิทยาการคอม และคณิตศาสตร์ ที่มหาวิทยาลัยเอดินเบอระ ในสก็อตแลนด์ ประเทศอังกฤษ
 
 ## 2018 - 2019
-* Studied at Point Grey Secondary School in Vancouver, BC, Canada.
+* เรียนที่โรงเรียนพอยต์เกรย์เซคอนแดรี่ (Point Grey Secondary) ในเมืองแวนคูเวอร์ รัฐบริติชโคลัมเบีย ประเทศแคนาดา (Vancouver, BC, Canada)
 
 ## 2016 - 2018
-* Studied at Mount Boucherie Secondary School in Kelowna, BC, Canada.
-* Stayed with an amicable host family.
-* My interests in Maths was revived due to the presence of accessible education videos.
-  Some channels I watched were
+* เรียนที่โรงเรียนเมาท์บูเชอรีเซคอนแดรี่ (Mount Boucherie Secondary) ในเมืองคีโลน่า รัฐบริติชโคลัมเบีย ประเทศแคนาดา (Kelowna, BC, Canada)
+* ใช้ชีวิตอยู่กับครอบครัวโฮสต์ฝรั่ง (host family) ที่ใจดี
+* ความสนใจในคณิตศาสตร์ถูกฟื้นฟู เนื่องจากวิดีโอเกี่ยวกับคณิตศาสตร์ที่หาดูได้ง่ายๆ ผ่าน Youtube ในแคนาดา  
+  บางช่องที่ดู ได้แก่
   [3Blue1Brown](https://www.youtube.com/@3blue1brown),
-  [BillShillito](https://www.youtube.com/@BillShillito/), and
+  [BillShillito](https://www.youtube.com/@BillShillito/), และ
   [VSauce](https://www.youtube.com/@Vsauce)
 
 ## 2012 - 2016
-* Studied at Khon Kaen Wittayayon School in Khon Kaen, Thailand.
-    - Took the English Program (EP). This means _almost all_ courses were taught in
-      English. An exception is the Thai language course, of course.
+* เรียนที่โรงเรียนขอนแก่นวิทยายน
+    - เรียนหลักสูตร English Program (EP) — เกือบทุกวิชาถูกสอนในภาษาอังกฤษ (เว้นไว้บางวิชา เช่นวิชาภาษาไทย)
 
 ## 2006 - 2012
-* Studied at Satit Modindaeng (สาธิตมอดินแดง) in Khon Kaen, Thailand.
-    - Participated in "Crossword Game" (Scrabble) competitions.
-* In 2011, I got into programming via a mod(ificaiton) for the famous video game Minecraft.
-    - The mod was called ComputerCraft. It lets you program "turtles,"
-      cube-shaped robots, and automate e.g. the placement of blocks, or the
-      collection and processing of resources.
+* เรียนที่โรงเรียนสาธิตมอดินแดง ในขอนแก่น
+    - แข่งขันในครอสเวิร์ดเกม (Crossword Game)
+* เริ่มสนใจการเขียนโปรแกรมในปี 2011 เพราะ mod สำหรับเกมซึ่งมีชื่อดัง ชื่อว่า Minecraft
+    - mod ชื่อว่า ComputerCraft ทำให้ผู้เล่นสามารถเขียนโค๊ด เพื่อบังคับหุ่นยนต์ทรงลูกบาศก์ในเกม (เรียกว่า "เต่า" หรือ "turtle")  
+      หุ่นยนต์พวกนี้สามารถวางบล็อค ผลิตของจากวัตถุดิบ และเก็บทรัพยากรในเกมให้ได้โดยอัฒโนมัติ
 
 ## 2004 - 2005
-* Studied at J. J. Finley Elementary School in Gainesville, Florida, US.
+* เรียนที่โรงเรียนเจเจฟินลี่ย์เอเลเมนแทรี่ (J. J. Finley Elementary) ในเมืองเกนส์วิลล์ ฟลอริดา สหรัฐอเมริกา (Gainesville, Florida, US)
 
-## 12th August 2000
-I was born. Hello, world!
+## 12 สิงหาคม 2000
+วันที่เห็นโลกครั้งแรก — Hello, world!
 
 
-##### Note: Some dates may not be exact.
-##### Note 2: I may add more details later.
+##### โน๊ต: วันที่ อาจไม่ตรงเป็ะ
+##### โน๊ต 2: อาจเพิ่มรายละเอียดทีหลัง

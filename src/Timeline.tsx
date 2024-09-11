@@ -8,10 +8,13 @@ import timelineMD from './assets/md/timeline.md?raw'
 import timelineMDTH from './assets/md/thai/timeline.md?raw'
 import './Timeline.css'
 
-const title = "Timeline - New's"
+const titles : Record<Language, string> = {
+    en: "Timeline - New's",
+    thai: "ไทม์ไลน์ - ธนกฤต"
+}
 function Timeline() {
     const lang = useContext(LangCxt)
-    useEffect(() => { document.title = title })
+    useEffect(() => { document.title = titles[lang] })
 
     return (
         <>
@@ -29,7 +32,7 @@ function Timeline() {
 
 const headers : Record<Language, JSX.Element> = {
     en: <h1>How did I spend my time?</h1>,
-    thai: <h1>TODO: TRANSLATE</h1>
+    thai: <h1>ไทม์ไลน์</h1>
 }
 const contents : Record<Language, string> = {
     en: timelineMD,

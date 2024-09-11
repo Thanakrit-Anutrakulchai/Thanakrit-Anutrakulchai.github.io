@@ -5,10 +5,13 @@ import Header from './Header.tsx'
 import Footer from './Footer.tsx'
 import './Cv_Transcript.css'
 
-const title = "CV - New's"
+const titles : Record<Language, string> = {
+    en: "CV - New's",
+    thai: "ประวัติการเรียน - ธนกฤต"
+}
 function Cv_Transcript() {
     const lang = useContext(LangCxt)
-    useEffect(() => { document.title = title })
+    useEffect(() => { document.title = titles[lang] })
 
     return <>
         <Header />
@@ -40,7 +43,21 @@ const contents : Record<Language, JSX.Element> = {
         </>,
     thai:
         <>
-            <p>TODO: TRANSLATE TO THAI</p>
+            <h1>CV</h1>
+            <p>สามารถหา <a href='/CV.pdf' className='internal'>CV เป็น PDF</a> ได้ที่นี่ </p>
+            <p>
+                หากต้องการ
+                สามารถใช้ <a href='/CVRAW.html' className='internal'>
+                    CV เป็น html
+                </a> เผื่ออุปกรณ์ของคุณไม่สามารถเปิดไฟล์ PDF หรือหากคุณต้องการข้อมูลเพื่อนำไปป้อนโปรแกรมคัดกรอง
+            </p>
+            {/* <p>The PDF was generated using</p> */}
+            <h1>ใบแสดงผลการศึกษา (Transcript)</h1>
+            <p>
+                สามารถหา <a href='/transcript.htm' className='internal'>
+                    ใบแสดงผลการศึกษา
+                </a> จากมหาวิทธยาลัยเอดินเบอระได้ที่นี่
+            </p>
         </>
 }
 
