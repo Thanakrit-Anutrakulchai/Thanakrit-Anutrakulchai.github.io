@@ -1,6 +1,6 @@
 import { JSX, useContext, useEffect } from 'react'
 
-import { Language, LangCxt, WindowCxt, WindowSize } from './env.tsx'
+import { Language, LangCxt, WindowCxt, WindowInfo, WindowSize } from './env.tsx'
 import Header from './Header.tsx'
 import Footer from './Footer.tsx'
 import github_logo_white from './assets/img/github-mark/github-mark-white.png' 
@@ -27,11 +27,78 @@ import boardgame from './assets/video/boardgame.mp4'
 
 const GITHUB_LINK = "https://github.com/Thanakrit-Anutrakulchai/"
 
+const titles : Record<Language, string> = {
+    en: "Projects - New's",
+    thai: "ผลงาน - ธนกฤต"
+}
+function Projects() {
+    const lang = useContext(LangCxt)
+    const winInfo = useContext(WindowCxt)
+    useEffect(() => { document.title = titles[lang] })
+
+    return (
+        <>
+            <Header content={headers[lang]} />
+            <Markdown 
+                className="md" 
+                components={{
+                    p: unwrapSingleton, 
+                    h2: formatHeaders, 
+                    img: delegateMedia(winInfo, lang),
+                    code: hideCode(winInfo)
+                }}>
+                {contents[lang]}
+            </Markdown>
+            <Footer content={footers[lang]}/>
+        </>
+    )
+}
+
+const headers : Record<Language, JSX.Element> = {
+    en: <h1>Brief descriptions of some of my projects.</h1>,
+    thai: <h1>ผลงานเก่าๆ พร้อมคำอธิบายสั้นๆ</h1>
+}
+const contents : Record<Language, string> = {
+    en: projectsMD,
+    thai: projectsMDTH
+}
+const footers : Record<Language, JSX.Element> = {
+    en:<h1>You can find some of these projects on GitHub.</h1>,
+    thai: <h1>คุณสามารถหางานพวกนี้บางงานได้บน GitHub</h1>
+}
+
 type PropOf<TagName extends keyof JSX.IntrinsicElements> = JSX.IntrinsicElements[TagName]
                                                          & ExtraProps
 
-const delegateMedia = (lang : Language) => (props : PropOf<"img">) => {
-    const winInfo = useContext(WindowCxt)
+// Hide Lua code in md if screen size is too small
+const hideCode = (winInfo : WindowInfo) => (props : PropOf<"code">) : JSX.Element => {
+    const {node, ...rest} = props
+
+    if (winInfo.size < WindowSize.lg) {
+        return <></>
+    } else {
+        return <code>
+            {rest.children}
+        </code>
+    }
+}
+
+function formatHeaders(props : PropOf<"h2">) : JSX.Element {
+    const {node, ...rest} = props
+    return <h2 className="md">{rest.children}</h2>
+}
+
+// For some reason, newline-separated elements become wrapped around <p> tags.
+// This ensures they are not, but also eliminates <p> tags in general.
+function unwrapSingleton(props : PropOf<"p">) : JSX.Element {
+    const {node, ...rest} = props
+    return <>{rest.children}</>
+}
+
+// Handle media requests in .md (i.e. things of the form ![alt](src)).
+// The "media" may not always be an image or a video, but also things that are
+// more appropriately handled in JSX than md.
+const delegateMedia = (winInfo : WindowInfo, lang : Language) => (props : PropOf<"img">) => {
     const {node, ...rest} = props
 
     if (rest.alt === 'sierpinski') {
@@ -102,71 +169,5 @@ const delegateMedia = (lang : Language) => (props : PropOf<"img">) => {
         return <img src={rest.src}></img>
     }
 }
-
-// hide Lua code in md if screen size is too small
-function hideCode(props : PropOf<"code">) : JSX.Element {
-    const winInfo = useContext(WindowCxt)
-    const {node, ...rest} = props
-
-    if (winInfo.size < WindowSize.lg) {
-        return <></>
-    } else {
-        return <code>
-            {rest.children}
-        </code>
-    }
-}
-
-function formatHeaders(props : PropOf<"h2">) : JSX.Element {
-    const {node, ...rest} = props
-    return <h2 className="md">{rest.children}</h2>
-}
-
-// for some reason, newline-separated elements become wrapped around <p> tags
-// this ensures they are not, but also eliminates <p> tags in general
-function unwrapSingleton(props : PropOf<"p">) : JSX.Element {
-    const {node, ...rest} = props
-    return <>{rest.children}</>
-}
-
-const titles : Record<Language, string> = {
-    en: "Projects - New's",
-    thai: "ผลงาน - ธนกฤต"
-}
-function Projects() {
-    const lang = useContext(LangCxt)
-    useEffect(() => { document.title = titles[lang] })
-
-    return (
-        <>
-            <Header content={headers[lang]} />
-            <Markdown 
-                className="md" 
-                components={{
-                    p: unwrapSingleton, 
-                    h2: formatHeaders, 
-                    img: delegateMedia(lang),
-                    code: hideCode
-                }}>
-                {contents[lang]}
-            </Markdown>
-            <Footer content={footers[lang]}/>
-        </>
-    )
-}
-
-const headers : Record<Language, JSX.Element> = {
-    en: <h1>Brief descriptions of some of my projects.</h1>,
-    thai: <h1>ผลงานเก่าๆ พร้อมคำอธิบายสั้นๆ</h1>
-}
-const contents : Record<Language, string> = {
-    en: projectsMD,
-    thai: projectsMDTH
-}
-const footers : Record<Language, JSX.Element> = {
-    en:<h1>You can find some of these projects on GitHub.</h1>,
-    thai: <h1>คุณสามารถหางานพวกนี้บางงานได้บน GitHub</h1>
-}
-
 
 export default Projects
