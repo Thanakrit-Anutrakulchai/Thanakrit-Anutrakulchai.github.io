@@ -31,7 +31,7 @@ function Home() {
         <>
             <Header content={headers[lang]} />
             <div className="pic-para">
-                <img className="hyped" src={hyped_screenshot} />
+                <img className="hyped" src={hyped_screenshot} title="Thanakrit at HYP-ED" />
                 <div>
                     {contents[lang]}
                 </div>

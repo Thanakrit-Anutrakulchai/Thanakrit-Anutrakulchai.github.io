@@ -28,10 +28,10 @@ function Footer(props : { content? : JSX.Element }) {
             <hr />
             {props.content}
             <div className="contacts">
-                <a href="https://github.com/Thanakrit-Anutrakulchai">
-                    <img src={github_logo} width={30} />
+                <a href="https://github.com/Thanakrit-Anutrakulchai" title="github logo link">
+                    <img src={github_logo} title="github logo" width={30} />
                 </a>
-                <a href="https://github.com/Thanakrit-Anutrakulchai">
+                <a href="https://github.com/Thanakrit-Anutrakulchai" title="github word link">
                     Github
                 </a>
             </div>

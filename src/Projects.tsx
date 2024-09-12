@@ -102,7 +102,9 @@ const delegateMedia = (winInfo : WindowInfo, lang : Language) => (props : PropOf
     const {node, ...rest} = props
 
     if (rest.alt === 'sierpinski') {
-        return <div className="media"><img className="small" src={sierpinski}></img></div>
+        return <div className="media">
+            <img className="small" src={sierpinski} title="Sierpinski Triangle"/>
+        </div>
     } else if (rest.alt === 'sierpinski-vids') {
         return  <div className="media">
             <video controls className="small">
@@ -114,7 +116,7 @@ const delegateMedia = (winInfo : WindowInfo, lang : Language) => (props : PropOf
         </div>
     } else if (rest.alt === 'github') {
         return <a href={GITHUB_LINK + rest.src}>
-            <img src={github_logo_white} className="github-proj" />
+            <img src={github_logo_white} className="github-proj" title="white github logo" />
         </a>
     } else if (rest.alt === 'bdays') {
         return <div className="media">
@@ -166,7 +168,7 @@ const delegateMedia = (winInfo : WindowInfo, lang : Language) => (props : PropOf
             </ul>
         }
     } else {
-        return <img src={rest.src}></img>
+        return <img src={rest.src} title={rest.title}></img>
     }
 }
 
