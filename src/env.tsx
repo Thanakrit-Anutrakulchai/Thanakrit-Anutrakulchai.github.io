@@ -1,8 +1,13 @@
 import { createContext, useEffect, useState, ReactNode } from 'react'
 
-export type Language = "en" | "thai"
+
+export const LANGS = [ "en", "thai" ] as const
+export type Language = typeof LANGS[number]
 export const DEFAULT_LANG : Language = "en"
 export const LangCxt = createContext<Language>(DEFAULT_LANG)
+
+import { homePage, PageInfo } from './pages.tsx'
+export const PageCxt = createContext<PageInfo>(homePage)
 
 // detecting windowsize to decide on what to display/hide
 // based on this SO: 

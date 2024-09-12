@@ -1,5 +1,7 @@
-import { useContext } from 'react'
-import { Language, LangCxt } from './env.tsx'
+import { useContext, Fragment } from 'react'
+import { Link } from 'react-router-dom'
+
+import { PageCxt, Language, LangCxt, DEFAULT_LANG, LANGS } from './env.tsx'
 import './Footer.css'
 
 import github_logo from './assets/img/github-mark/github-mark.png' 
@@ -24,7 +26,7 @@ function Footer(props : { content? : JSX.Element }) {
     const lang = useContext(LangCxt)
 
     return (
-        <>
+        <div>
             <hr />
             {props.content}
             <div className="contacts">
@@ -36,8 +38,32 @@ function Footer(props : { content? : JSX.Element }) {
                 </a>
             </div>
             {eml[lang]}
-        </>
+            <p style={{textAlign: "center"}}>
+                {changeLangText[lang]}
+                <ChangeLanguageLinks />
+            </p>
+        </div>
     )
+}
+
+function ChangeLanguageLinks() : JSX.Element {
+    const lang = useContext(LangCxt)
+    const curPage = useContext(PageCxt)
+
+    return <>
+        {LANGS.map((l, i) => {
+            const bar = i === LANGS.length - 1 ? "" : " | "
+            const linkPrefix = l === DEFAULT_LANG ? "" : "/" + l
+
+            return <Fragment key={l}>{(l === lang ?
+                <>{l}</> :
+                <Link className="internal" to={linkPrefix + curPage.baseLink}>
+                    {l}
+                </Link>
+            )}{bar}
+            </Fragment>
+        })}
+    </>
 }
 
 const eml : Record<Language, JSX.Element> = {
@@ -49,6 +75,11 @@ const eml : Record<Language, JSX.Element> = {
             อี<DeterBot />เมล: <a href={EML_LINK}>tanutra<DeterBot />
             kulchai@gm<DeterBot />ail.co<DeterBot />m</a>
         </p>,
+}
+
+const changeLangText : Record<Language, string> = {
+    en: "Browse the site in a different language: ",
+    thai: "อ่านเว็บไซต์ในภาษาอื่น: "
 }
 
 export default Footer
