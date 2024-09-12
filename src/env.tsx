@@ -4,6 +4,10 @@ import { createContext, useEffect, useState, ReactNode } from 'react'
 export const LANGS = [ "en", "thai" ] as const
 export type Language = typeof LANGS[number]
 export const DEFAULT_LANG : Language = "en"
+export const LANG_DISPLAY_NAMES : Readonly<Record<Language, string>> = {
+    en: "english",
+    thai: "ไทย"
+}
 export const LangCxt = createContext<Language>(DEFAULT_LANG)
 
 import { homePage, PageInfo } from './pages.tsx'

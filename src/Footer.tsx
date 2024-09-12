@@ -1,7 +1,7 @@
 import { useContext, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
-import { PageCxt, Language, LangCxt, DEFAULT_LANG, LANGS } from './env.tsx'
+import { PageCxt, Language, LangCxt, LANG_DISPLAY_NAMES, DEFAULT_LANG, LANGS } from './env.tsx'
 import './Footer.css'
 
 import github_logo from './assets/img/github-mark/github-mark.png' 
@@ -56,9 +56,9 @@ function ChangeLanguageLinks() : JSX.Element {
             const linkPrefix = l === DEFAULT_LANG ? "" : "/" + l
 
             return <Fragment key={l}>{(l === lang ?
-                <>{l}</> :
+                <>{LANG_DISPLAY_NAMES[l]}</> :
                 <Link className="internal" to={linkPrefix + curPage.baseLink}>
-                    {l}
+                    {LANG_DISPLAY_NAMES[l]}
                 </Link>
             )}{bar}
             </Fragment>
