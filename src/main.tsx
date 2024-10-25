@@ -6,6 +6,9 @@ import { PageCxt, WithWindowSize } from './env.tsx'
 import { getAllPages, PageInfo } from './pages.tsx'
 import './index.css'
 
+// polyfill for react-markdown
+// see: https://github.com/remarkjs/react-markdown/issues/772
+import 'core-js/es/object/has-own'
 
 function route(p : PageInfo) : JSX.Element {
     return <Route key={p.id} path={p.link} element={
