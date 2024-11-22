@@ -35,6 +35,7 @@ hr {
     margin-left: 0;
     margin-right: 0;
     background-color: black;
+    border-style: unset;
     /* border-color: black; */
     height: 2px;
 }
