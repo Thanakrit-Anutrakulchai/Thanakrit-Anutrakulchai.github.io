@@ -1,0 +1,50 @@
+.tabs {
+    min-width: 150px;
+    border: 2px solid black;
+    border-radius: 33%;
+    padding: 1px;
+    margin: 1px;
+
+    text-align: center;
+
+    flex: 1;
+    /* display: inline; */
+}
+
+.tabs:hover{
+    justify-content: center;
+}
+
+/* messing with some different layouts */
+.tabstrip {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+
+    /* row-gap: 10px; */
+    column-gap: 20px;
+    /* align-items: stretch; */
+
+    /* display: grid; */
+    /* grid-template-columns: 20% 20% 20%; */
+    /* grid-template-areas: ; */
+    /* justify-content: space-evenly; */
+    /* justify-self: end; */
+    /* align-self: center; */
+    /* place-items: center; */
+}
+
+@media (min-width: 500px) {
+    .tabstrip {
+        flex-direction: row;
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .tabstrip {
+        flex-direction: column;
+        width: 100%;
+    }
+}

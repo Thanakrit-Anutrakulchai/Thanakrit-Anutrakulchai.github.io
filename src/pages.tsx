@@ -1,4 +1,4 @@
-import { LangCxt } from './env.tsx'
+import { LangCxt, ThemeCxt, THEMES, Theme } from './env.tsx'
 
 import {default as Home} from './Home.tsx'
 import {default as Projects} from './Projects.tsx'
@@ -28,7 +28,7 @@ export const basePages : PageInfo[] = [
     makePage({ divId: "timeline", link: "/timeline", content: <Timeline /> }),
     makePage({ divId: "blog", link: "/blog", content: <Blog /> }),
     makePage({ divId: "cv_transcript", link: "/cv_transcript", content: <Cv_Transcript /> }),
-    makePage({ divId: "pagenotfound", link: "/:notfound", content: <PageNotFound /> }),
+    makePage({ divId: "pagenotfound", link: "/*", content: <PageNotFound /> }),
 ]
 
 // Append ".html" to page link. For legacy links, may remove later
@@ -44,9 +44,17 @@ function thaiVersion(p : PageInfo) : PageInfo {
     }
 }
 
+const withTheme = (theme : Theme) => (p : PageInfo) => {
+    return { ...p,
+        id: uuid(), link: "/" + theme + p.link,
+        content: <ThemeCxt.Provider value={theme}>{p.content}</ThemeCxt.Provider>
+    }
+}
+
 // This is a function to defer calling LangCxt.Provider, 
 // which requires LangCxt to be instantiated first.
 export function getAllPages() {
+    const themedPages = THEMES.flatMap((t) => basePages.map(withTheme(t)))
     const legacyPages = basePages.map(dotHtml)
     const thaiPages   = basePages.concat(legacyPages).map(thaiVersion)
     return basePages.concat(legacyPages).concat(thaiPages)

@@ -10,6 +10,11 @@ export const LANG_DISPLAY_NAMES : Readonly<Record<Language, string>> = {
 }
 export const LangCxt = createContext<Language>(DEFAULT_LANG)
 
+export const THEMES = [ "nostalgic" ] as const
+export type Theme = typeof THEMES[number]
+export const DEFAULT_THEME : Theme = "nostalgic"
+export const ThemeCxt = createContext<Theme>(DEFAULT_THEME)
+
 import { homePage, PageInfo } from './pages.tsx'
 export const PageCxt = createContext<PageInfo>(homePage)
 

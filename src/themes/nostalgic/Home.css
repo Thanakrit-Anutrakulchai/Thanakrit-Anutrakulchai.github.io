@@ -1,0 +1,41 @@
+#home {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 500px) {
+    img.hyped {
+        float: left;
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    img.hyped {
+        float: left;
+        margin-right: 30px;
+        width: 100%;
+    }
+}
+
+div.pic-para {
+    text-align: left;
+}
+
+p.email {
+    text-align: center;
+}
+
+/* Fix hr under flexbox */
+/* see https://stackoverflow.com/questions/34365271/hr-inside-container-with-display-flex-become-corrupted */
+hr {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: black;
+    border-style: unset;
+    /* border-color: black; */
+    height: 2px;
+}

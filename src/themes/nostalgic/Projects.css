@@ -1,0 +1,79 @@
+#projects {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h2.md {
+    display: flex;
+    align-items: center;
+}
+
+img.github-proj {
+    display: flex;
+    width: 25px;
+    margin-left: 10px;
+}
+
+pre {
+    background-color: black;
+    color: white;
+}
+
+div.media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (min-width: 500px) {
+    .small {
+        width: 400px;
+    }
+}
+
+@media (max-width: 500px) {
+    .small {
+        width: 90%;
+    }
+}
+
+@media (min-width: 900px) {
+    .large {
+        width: 800px;
+    }
+}
+
+@media (max-width: 900px) {
+    .large {
+        width: 88%;
+    }
+}
+
+/* syntax highlighting */
+.hljs {
+    background-color: #161b32;
+    color: white;
+}
+.hljs-comment {
+    color: grey;
+}
+.hljs-built_in {
+    color: white;
+}
+.hljs-number {
+    color: lightgreen;
+}
+.hljs-string {
+    color: yellow;
+}
+.hljs-keyword {
+    color: pink;
+}
+.hljs-function {
+    color: lightgreen;
+}
+.hljs-params {
+    color: white;
+}

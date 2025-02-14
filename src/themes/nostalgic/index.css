@@ -1,0 +1,42 @@
+body {
+    background-color: #46464a; /* Courtesy of a friend of a friend's suggestion */
+    font-size: 18px;
+    font-family: courier;
+    color: yellow;
+    overflow-wrap: break-word;
+}
+
+h1 {
+    font-size: 30px;
+    /* font-family: ; */
+    color: white;
+}
+
+p {
+    font-size: 18px;
+    font-family: courier;
+    color: yellow;
+}
+
+.skills {
+    text-align: left;
+}
+
+.md {
+    text-align: left;
+}
+
+a {
+    color: cyan;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a.internal {
+    /* some alternative colours listed here to try out */
+    /* color: orange; */
+    color: #f5b53a
+}
