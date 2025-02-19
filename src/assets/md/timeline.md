@@ -1,7 +1,17 @@
-## 2024, June Onwards
+## 2024 Dec. Onwards
+* Break from job searching to take care of old dog
+    - My old friend is dying, and I'd like to spend time with him.
+    - My sleep schedule is messed up because of this (need to care for him during the night).
+    - Unlikely to find a job that aligns with my current schedule.
+    - Thought I found one, but a client never responded, so no work. Done looking for now.
+* Searching for later opportunities
+    - Looking at e.g. PhD Scholarships later in the year
+    - If you have job offers starting later (past August) in the year, I'd love to hear!
+
+## 2024, June - Dec.
 * Job Searching
-    - I am looking for a job, preferably in Canada or the UK.
-    - Please contact me if you think we can work together!
+    - I looked for a job, preferring ones in Canada or the UK.
+    - Even now, please contact me if you think we can work together!
 
 ## 2023, June - 2024, June
 * Took a gap year!
